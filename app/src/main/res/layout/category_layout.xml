@@ -9,12 +9,12 @@
     android:background="@drawable/item_lay"
     android:layout_margin="5dp"
     android:orientation="vertical"
-    android:padding="10sp"
+    android:padding="20sp"
     android:gravity="center_vertical|center_horizontal">
     <ImageView
         android:id="@+id/image"
-        android:layout_width="53dp"
-        android:layout_height="55dp"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
         android:src="@drawable/banner"
         />
     <TextView

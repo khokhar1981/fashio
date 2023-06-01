@@ -22,12 +22,12 @@ import java.util.ArrayList;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.RecyclerViewHolder> {
 
-    private ArrayList<CategoryBeans> courseDataArrayList;
+    private ArrayList<CategoryBeans> recyclerDataArrayList;
     private Activity mcontext;
     private MainActivity mainActivity;
 
     public RecyclerViewAdapter(ArrayList<CategoryBeans> recyclerDataArrayList, MainActivity mainActivity) {
-        this.courseDataArrayList = recyclerDataArrayList;
+        this.recyclerDataArrayList = recyclerDataArrayList;
         this.mainActivity = mainActivity;
         this.mcontext = mainActivity.activity;
     }
@@ -43,9 +43,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewHolder holder, int position) {
         // Set the data to textview and imageview.
-        CategoryBeans recyclerData = courseDataArrayList.get(position);
+        CategoryBeans recyclerData = recyclerDataArrayList.get(position);
         holder.txtName.setText(recyclerData.getName());
-        holder.imgDraw.setImageDrawable(recyclerData.getImage()) ;
+        holder.imgDraw.setImageDrawable(mcontext.getResources().getDrawable(recyclerData.getImages())) ;
         holder.layout.setTag(recyclerData.getId());
         holder.layout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,7 +65,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public int getItemCount() {
         // this method returns the size of recyclerview
-        return courseDataArrayList.size();
+        return recyclerDataArrayList.size();
     }
 
     // View Holder Class to handle Recycler View.

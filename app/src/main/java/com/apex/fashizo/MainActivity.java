@@ -8,6 +8,7 @@ import android.app.Activity;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
+import com.apex.fashizo.Utility.Utilities;
 import com.apex.fashizo.adapter.RecyclerViewAdapter;
 import com.apex.fashizo.bean.CategoryBeans;
 
@@ -23,12 +24,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         activity = this;
         ArrayList<CategoryBeans> listOfCat = new ArrayList<>();
-        listOfCat.add(getCategoryBeans("1","man_icon.png","Customize Male Shirt"));
-        listOfCat.add(getCategoryBeans("2","female_icon.png","Customize Female Shirt"));
-        listOfCat.add(getCategoryBeans("3","threed_icon.png","3D Printing"));
-        listOfCat.add(getCategoryBeans("4","nngravingservice.png","Engraving Service"));
-        listOfCat.add(getCategoryBeans("5","mag_icon.png","Mug Printing"));
-        listOfCat.add(getCategoryBeans("6","accessories_icon.png","Tech Accessories"));
+        listOfCat.add(Utilities.getCategoryBeans(this,"1",R.drawable.man_icon,"Customize Male Shirt",false));
+        listOfCat.add(Utilities.getCategoryBeans(this,"2",R.drawable.female_icon,"Customize Female Shirt",false));
+        listOfCat.add(Utilities.getCategoryBeans(this,"3",R.drawable.threed_icon,"3D Printing",false));
+        listOfCat.add(Utilities.getCategoryBeans(this,"4",R.drawable.nngravingservice,"Engraving Service",false));
+        listOfCat.add(Utilities.getCategoryBeans(this,"5",R.drawable.mag_icon,"Mug Printing",false));
+        listOfCat.add(Utilities.getCategoryBeans(this,"6",R.drawable.accessories_icon,"Tech Accessories",false));
         RecyclerViewAdapter adapter=new RecyclerViewAdapter(listOfCat,this);
 
         recyclerView = (RecyclerView) findViewById(R.id.itemRecyclerView);
@@ -39,29 +40,5 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private CategoryBeans getCategoryBeans(String id,String name,String title){
-        CategoryBeans beans =  null;
-        try {
-            beans = new CategoryBeans();
-            beans.setId(id);
-            beans.setName(title);
-            beans.setImage(getDrawable(name));
-        }catch(Exception ex){
 
-        }
-        return beans;
-    }
-    private Drawable getDrawable(String name){
-        Drawable drawable = null;
-        try{
-            InputStream ims = getAssets().open(name);
-            // load image as Drawable
-            drawable = Drawable.createFromStream(ims, null);
-            // set image to ImageView
-
-        }catch(Exception ex){
-
-        }
-        return drawable;
-    }
 }

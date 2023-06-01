@@ -9,4 +9,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="bordercolor">#E9C599</color>
     <color name="title">#3D5361</color>
+    <color name="title2">#4F7288</color>
+    <color name="itembg">#30000000</color>
+    <color name="next">#FDBA74</color>
+    <color name="light_gray">#BCBAB9</color>
 </resources>

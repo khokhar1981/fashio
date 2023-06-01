@@ -4,6 +4,15 @@ import android.graphics.drawable.Drawable;
 
 public class CategoryBeans {
     String id;
+    int images;
+
+    public int getImages() {
+        return images;
+    }
+
+    public void setImages(int images) {
+        this.images = images;
+    }
 
     public String getId() {
         return id;
@@ -13,16 +22,17 @@ public class CategoryBeans {
         this.id = id;
     }
 
-    Drawable image;
     String name;
+    boolean isSelected;
 
-    public Drawable getImage() {
-        return image;
+    public boolean isSelected() {
+        return isSelected;
     }
 
-    public void setImage(Drawable image) {
-        this.image = image;
+    public void setSelected(boolean selected) {
+        isSelected = selected;
     }
+
 
     public String getName() {
         return name;

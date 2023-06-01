@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">fashizo</string>
     <string name="choosethegraments">1.Choose the Garments</string>
-    <string name="choosethecollar">2.Choose the Garments</string>
+    <string name="choosethecollar">2.Choose the Collar</string>
+    <string name="choosetheseleeves">3.Choose the Sleeves</string>
+    <string name="choosecuff">4.Choose cuff</string>
+    <string name="choosebuttons">5.Choose Buttons</string>
+    <string name="chooselong">6.Choose Long</string>
     <string name="next">Next</string>
+    <string name="submit">Submit</string>
 </resources>
